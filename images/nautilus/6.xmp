@@ -1,0 +1,66 @@
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 7.0-c000 1.000000, 0000/00/00-00:00:00        ">
+ <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about=""
+    xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+    xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
+    xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/"
+    xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+    xmlns:exif="http://ns.adobe.com/exif/1.0/"
+    xmlns:tiff="http://ns.adobe.com/tiff/1.0/"
+    xmlns:crs="http://ns.adobe.com/camera-raw-settings/1.0/"
+   xmpMM:DocumentID="xmp.did:1670f79e-0b87-904f-9043-cddb8c913dca"
+   xmpMM:OriginalDocumentID="503C6CE291B23F8B22420B37881E50BC"
+   xmpMM:InstanceID="xmp.iid:fe22ed75-40fc-204e-ad98-3b46f7f6f88d"
+   dc:format="image/avif"
+   photoshop:DateCreated="2024-02-24T14:11:58"
+   photoshop:SidecarForExtension="AVIF"
+   photoshop:EmbeddedXMPDigest="D9DBC5D8A83554578B345FD41458690F"
+   xmp:CreatorTool="Adobe Lightroom 7.5 (Windows)"
+   xmp:MetadataDate="2025-02-10T22:37:43+01:00"
+   xmp:ModifyDate="2024-10-08T16:20:40+02:00"
+   exif:ExifVersion="0231"
+   exif:DateTimeOriginal="2024-02-24T14:11:58"
+   tiff:Orientation="1"
+   crs:HasSettings="False"
+   crs:HasCrop="False"
+   crs:AlreadyApplied="False">
+   <xmpMM:History>
+    <rdf:Seq>
+     <rdf:li
+      stEvt:action="edited"
+      stEvt:when="2024-02-24T13:14:21Z"/>
+     <rdf:li
+      stEvt:action="derived"
+      stEvt:parameters="converted from image/png to image/jpeg, saved to new location"/>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="xmp.iid:06a24358-c238-da4b-b8a4-63a27b5ffea6"
+      stEvt:when="2024-02-24T14:17:24+01:00"
+      stEvt:softwareAgent="Adobe Lightroom 6.5 (Windows)"
+      stEvt:changed="/"/>
+     <rdf:li
+      stEvt:action="derived"
+      stEvt:parameters="converted from image/jpeg to image/avif, saved to new location"/>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="xmp.iid:1670f79e-0b87-904f-9043-cddb8c913dca"
+      stEvt:when="2024-10-08T16:20:40+02:00"
+      stEvt:softwareAgent="Adobe Lightroom 7.5 (Windows)"
+      stEvt:changed="/"/>
+     <rdf:li
+      stEvt:action="saved"
+      stEvt:instanceID="xmp.iid:fe22ed75-40fc-204e-ad98-3b46f7f6f88d"
+      stEvt:when="2025-02-10T22:37:43+01:00"
+      stEvt:softwareAgent="Adobe Photoshop Camera Raw 17.1 (Windows)"
+      stEvt:changed="/metadata"/>
+    </rdf:Seq>
+   </xmpMM:History>
+   <xmpMM:DerivedFrom
+    stRef:instanceID="xmp.iid:06a24358-c238-da4b-b8a4-63a27b5ffea6"
+    stRef:documentID="xmp.did:06a24358-c238-da4b-b8a4-63a27b5ffea6"
+    stRef:originalDocumentID="503C6CE291B23F8B22420B37881E50BC"/>
+  </rdf:Description>
+ </rdf:RDF>
+</x:xmpmeta>

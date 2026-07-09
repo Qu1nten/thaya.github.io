@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quinten - Polaris</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#Quinten" />
+    <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="favicon/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="favicon/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="favicon/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="favicon/mstile-310x310.png" />
+
+
+</head>
+<body>
+    <nav class="nav">
+        <a href="/" class="nav-name">QUINTEN RIJKEN</a>
+        <a href="/">Work</a>
+        <a href="/about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+
+    <div class="text-container">
+        <h1 data-english="POLARIS" data-dutch="POLARIS">POLARIS</h1>
+
+        <div class="language-toggle">
+            <button id="englishBtn">ENGLISH</button>
+            <button id="dutchBtn">DUTCH</button>
+        </div>
+
+        <p
+        data-english="Polaris is a lookout tower in the Soesterduinen.
+        The shape of the structure represents a north arrow. The main lines of the design rise diagonally into the sky, referencing the North Star.
+        At the highest point of the structure is a flat platform where you can stand. The structure consists of two elements that mirror each other. The two elements deliberately do not touch. I chose this in order to create a split within connection. When you stand at the highest point of the structure, you can hold a conversation with someone on the mirrored section. Yet there is a break in the connection, because there is no passage between them.
+
+        'Though we are not in contact, the connection is stronger than before.'" 
+        
+        data-dutch="Polaris is een uitkijktoren in de Soesterduinen.
+        De vorm van de constructie representeert een noordpijl. De hoofdlijnen in het ontwerp lopen schuin de lucht in, dit verwijst naar de poolster.
+        Op het hoogste punt van de constructie is een vlak stuk waar je kan staan. De constructie bestaat uit twee elementen, die weerspiegeld zijn. De twee elementen raken elkaar bewust niet aan. Ik heb hiervoor gekozen om een splitsing in verbinding te creëren. Als je op het hoogste punt van de constructie staat, kan je een conversatie houden met iemand op het gespiegelde gedeelte. Toch is er een breuk in de connectie doordat er geen doorgang is.
+
+        'Al zijn wij niet in contact, is de verbinding sterker dan tevoren.'">
+        </p>
+    </div>
+
+    </div>
+        <div class="image-container">
+        <div class="image-grid">
+            <img src="images/polaris/polaris2.avif" alt="" onclick="enlargeImage(this)" style="mix-blend-mode: multiply;">
+        </div>
+    </div>
+
+     </div>
+        <div class="image-container">
+        <div class="image-grid">
+            <img src="images/polaris/polaris4.avif" alt="" onclick="enlargeImage(this)">
+            <img src="images/polaris/polaris3.avif" alt="" onclick="enlargeImage(this)">
+        </div>
+    </div>
+
+
+    <div class="spacer"></div>
+
+     </div>
+        <div class="image-container image-grid-narrow">
+        <div class="image-grid">
+            <img src="images/polaris/polaris1.avif" alt="" onclick="enlargeImage(this)" style="mix-blend-mode: multiply;">
+        </div>
+    </div>
+
+     <div class="spacer"></div>
+
+<div id="imageModal" class="modal">
+    <span class="arrow left-arrow">&#10094;</span>
+    <span class="arrow right-arrow">&#10095;</span>
+    <img id="modalImage" class="modal-content">
+    <div id="modalAltText" class="modal-alt-text"></div> 
+</div>
+
+
+
+<section id="contact">
+    <div class="contact-info">
+        <p>
+            <a href="https://www.linkedin.com/in/quintenr/"              target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &nbsp;&nbsp;
+            <a href="https://discord.com/invite/wz3cgKWKCb" target="_blank"><i class="fab fa-discord"></i> Discord</a> &nbsp;&nbsp;
+            <a href="mailto:rijkenquinten@gmail.com">                       <i class="fas fa-envelope"></i> E-mail</a>
+        </p>
+    </div>
+</section>
+
+
+</body>
+<script src="script.js"></script>
+</html>

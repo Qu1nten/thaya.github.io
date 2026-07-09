@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quinten - Kruispunt gevlucht</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#Quinten" />
+    <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="favicon/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="favicon/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="favicon/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="favicon/mstile-310x310.png" />
+
+
+</head>
+<body>
+    <nav class="nav">
+        <a href="/" class="nav-name">QUINTEN RIJKEN</a>
+        <a href="/">Work</a>
+        <a href="/about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+
+    <div class="text-container">
+        <h1 data-english="CROSSROAD" data-dutch="KRUISPUNT">KRUISPUNT</h1>
+
+        <div class="language-toggle">
+            <button id="englishBtn">ENGLISH</button>
+            <button id="dutchBtn">DUTCH</button>
+        </div>
+
+        <p
+        data-english="An intersection in Utrecht between Lombok West and East. This intersection is a residential area with a small tree and a trash can in the middle. Cars play a dominant role in and around the intersection. While researching the location, I noticed that the intersection is quite dangerous. It's confusing and cars don't slow down. There are also many parked cars around the intersection, taking up a lot of space. In its current state, the intersection is only used as a traffic zone. 
+        
+        With this project, I explored how I could make this a gathering place where people enjoy spending time, but also where safety and functionality in traffic are paramount." 
+        
+        data-dutch="Een kruispunt in Utrecht tussen Lombok west en oost. Dit kruispunt is een woonerf met in het midden een kleine boom en een prullenbak. In en rondom het kruispunt speelt de auto een dominante rol. Tijdens het onderzoeken van de plek is mij opgevallen dat het kruispunt best wel gevaarlijk is. Het is onoverzichtelijk en auto’s verslomen er niet. Ook staan er rondom het kruispunt veel geparkeerde auto’s die veel ruimte in nemen. Het kruispunt wordt in de bestaande situatie alleen als bewegingsgebied gebruikt. 
+        
+        Met dit project heb ik onderzocht hoe ik dit een samenkomst plek kon maken waar mensen graag tijd willen besteden. Maar ook waar veilgheid en functionaliteit in het verkeer centraal staat.">
+        </p>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="image-container">
+        <div class="image-grid">
+            <img src="images/kruispunt/kruispunt1.avif" alt="" onclick="enlargeImage(this)" style="mix-blend-mode: multiply;">
+            <img src="images/kruispunt/kruispunt2.avif" alt="" onclick="enlargeImage(this)" style="mix-blend-mode: multiply;">
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+     <div class="image-container image-grid-narrow">
+        <div class="image-grid">
+            <img src="images/kruispunt/ss.avif" alt="" onclick="enlargeImage(this)" style="mix-blend-mode: multiply;">
+            <img src="images/kruispunt/ss2.avif" alt="" onclick="enlargeImage(this)" style="mix-blend-mode: multiply;">
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="image-container image-grid-narrow">
+        <div class="image-grid">
+            <img src="images/kruispunt/shot2.avif" alt="" onclick="enlargeImage(this)">
+        </div>
+    </div>
+
+<div id="imageModal" class="modal">
+    <span class="arrow left-arrow">&#10094;</span>
+    <span class="arrow right-arrow">&#10095;</span>
+    <img id="modalImage" class="modal-content">
+    <div id="modalAltText" class="modal-alt-text"></div> 
+</div>
+
+
+
+<section id="contact">
+    <div class="contact-info">
+        <p>
+            <a href="https://www.linkedin.com/in/quintenr/"              target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &nbsp;&nbsp;
+            <a href="https://discord.com/invite/wz3cgKWKCb" target="_blank"><i class="fab fa-discord"></i> Discord</a> &nbsp;&nbsp;
+            <a href="mailto:rijkenquinten@gmail.com">                       <i class="fas fa-envelope"></i> E-mail</a>
+        </p>
+    </div>
+</section>
+
+
+</body>
+<script src="script.js"></script>
+</html>

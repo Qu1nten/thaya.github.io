@@ -1,0 +1,738 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f6f6f6;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    position: relative;
+    /* No margin/padding-top: the nav bar must reach the very top and the screen edges */
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+nav {
+    position: sticky;
+    top: 0;                    /* Stick flush against the top of the screen */
+    align-self: stretch;       /* Full-width bar, edge to edge */
+    display: flex;
+    justify-content: flex-end; /* Keep the links on the right */
+    z-index: 8000;
+    background-color: #f6f6f6; /* The bar — content disappears behind it when scrolling */
+    padding: 20px ; /* Right inset replaces the old margin-right: 80px */
+    box-sizing: border-box;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #323232;
+    font-size: 40px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #F0BB78;
+}
+
+/* Name on the left of the nav bar — same font/size as the links (it's a nav a),
+   hidden at the top of the page, fades in once you scroll (see script.js) */
+.nav-name {
+    margin-right: auto;   /* Pushes Work/About/Contact to the right */
+    white-space: nowrap;  /* Never break the name onto two lines */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none; /* Not clickable while invisible */
+}
+
+body.scrolled .nav-name {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Between 769-950px the 40px name + links don't fit side by side */
+@media (max-width: 950px) {
+    .nav-name { display: none; }
+}
+
+/* Below 768px the links shrink to 20px, so the name fits again */
+@media (max-width: 768px) {
+    .nav-name { display: block; }
+}
+
+/* On very narrow phones even the 20px version collides with the links */
+@media (max-width: 480px) {
+    .nav-name { display: none; }
+}
+
+.text-container {
+    text-align: left;
+    width: 90%;           /* Match .image-container */
+    max-width: 1700px;    /* Match .image-grid */
+    margin: 0 auto;       /* Center the container on the page */
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 80px;
+    color: #323232;
+    text-align: left;
+    width: 100%;          /* Now fills the 1700px parent container */
+    margin-bottom: 10px;
+    
+    /* Optical Fix: Nudge the first letter slightly left to 
+       offset the font's natural side-padding */
+    transform: translateX(-4px); 
+
+    /* Original animations */
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 0s;
+}
+
+
+p {
+    font-size: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 0.2s;
+    color: #323232;
+    
+}
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: 1700px;
+    width: 90%;
+}
+
+.card {
+    position: relative;
+    border: 0px solid #dddddd00;
+    cursor: pointer;
+    /* CHANGED: Use a normal transition so the value drops gradually */
+    transition: z-index 0.5s; 
+    animation: fadeIn 1s ease-in-out both;
+    z-index: 1; 
+
+    
+}
+
+.card:nth-child(1) { animation-delay: 0s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.2s; }
+.card:nth-child(4) { animation-delay: 0.3s; }
+.card:nth-child(5) { animation-delay: 0.4s; }
+.card:nth-child(6) { animation-delay: 0.5s; }
+.card:nth-child(7) { animation-delay: 0.6s; }
+.card:nth-child(8) { animation-delay: 0.7s; }
+.card:nth-child(9) { animation-delay: 0.8s; }
+.card:nth-child(10) { animation-delay: 0.9s; }
+.card:nth-child(11) { animation-delay: 1.0s; }
+.card:nth-child(12) { animation-delay: 1.1s; }
+.card:nth-child(13) { animation-delay: 1.2s; }
+.card:nth-child(14) { animation-delay: 1.3s; }
+.card:nth-child(15) { animation-delay: 1.4s; }
+.card:nth-child(16) { animation-delay: 1.5s; }
+
+
+.card img {
+    width: 96%;
+    height: 96%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.card:hover {
+    /* CHANGED: Ensure this is significantly higher than the base z-index */
+    z-index: 100;
+    /* CHANGED: Change z-index instantly on hover */
+    transition: z-index 0s; 
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 96%;
+    height: 96%;
+    background-color: rgba(229, 229, 230, 0.336);
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.card:hover::before {
+    background-color: rgba(0, 123, 255, 0);
+    transform: scale(1.05);
+}
+
+.card-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #F6F6F6;
+    text-align: center;
+    opacity: 1;
+    font-weight: bold;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.card:hover .card-text {
+    opacity: 0;
+}
+
+
+/* Image Container */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;           /* Match .text-container */
+    max-width: 1700px;    /* Match the site-wide content column */
+    margin: 0 auto;
+    padding: 15px 0;      /* Half the grid gap so vertical spacing between stacked grids (10+10) matches the 20px horizontal gap */
+    box-sizing: border-box;
+}
+
+@media (hover: none), (max-width: 768px) {
+    .image-container {
+        padding: 10px;
+    }
+
+    /* Give the text the same 10px side gutters as the image padding above,
+       so text and image edges line up vertically on mobile. Videos and
+       links get the same gutters next to their own base rules below. */
+    .text-container {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+}
+
+/* Image Grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1700px;
+    width: 100%;
+    justify-content: center;
+}
+
+@media (hover: none), (max-width: 768px) {
+    .image-grid {
+        gap: 20px;
+    }
+}
+
+/* Narrower single-image grid (e.g. fenix2) — smaller than the full content width */
+.image-grid-narrow {
+    max-width: 1400px;
+}
+
+.image-grid-narrow2 {
+    max-width: 1000px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s ease-in-out both;
+    animation-delay: 0.5s; 
+}
+
+.image-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* On touch devices (and narrow screens) a tap triggers :hover and makes the
+   enlargement "stick". These devices also don't open the modal (see isMobile()
+   in script.js), so disable the hover zoom and the clickable cursor there. */
+@media (hover: none), (max-width: 768px) {
+    .image-grid img:hover {
+        transform: none;
+    }
+    .image-grid img {
+        cursor: default;
+    }
+}
+
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f6f6c4;
+    overflow: hidden; /* Prevent body scroll bars from appearing */
+}
+
+/* Modal content (image) */
+.modal-content {
+    display: block;
+    margin: auto;
+    max-width: 70%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* Initial transform. JS will update this. */
+    transform: translate(-50%, -50%) scale(1); 
+    object-fit: contain;
+    
+    /* Important: We removed 'transition' here so the scroll zoom feels instant */
+    cursor: grab;
+}
+
+.modal-content:active {
+    cursor: grabbing;
+}
+
+.modal-alt-text {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #323232;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px 10px;
+    font-family: Helvetica, sans-serif;
+    pointer-events: none; 
+}
+
+
+/* Navigation arrows */
+
+.arrow {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.arrow:hover {
+    color: #F0BB78; 
+    transform: translateY(-50%) scale(1.2); 
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #323232;
+    font-size: 90px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left-arrow {
+    left: 120px;
+    z-index: 1000;
+}
+
+.right-arrow {
+    right: 120px;
+    z-index: 1000;
+}
+
+
+.language-toggle button.active {
+    color: #323232;
+}
+
+
+.language-toggle {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 0.2s;
+}
+
+.language-toggle button {
+    background: none;
+    border: none;
+    color: #F0BB78;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.language-toggle button:hover {
+    color: #323232;
+}
+
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;             /* Matches .image-container width */
+    max-width: 1700px;      /* Matches .image-grid max-width */
+    margin: 0 auto;         /* Centered on page */
+    padding: 20px 0;        /* Vertical spacing only, so the video is as wide as the text */
+    box-sizing: border-box;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out both;
+    animation-delay: 0.5s;
+}
+
+/* Mobile: same 10px side gutters as the .image-container padding, so video
+   and image edges line up vertically */
+@media (hover: none), (max-width: 768px) {
+    .video-container {
+        padding: 20px 10px;
+    }
+}
+
+/* Specific layout for the Minecraft page with two videos */
+.video-container.side-by-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Video styling - now replaces .video2 */
+.video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gump House page: narrower video on desktop only; mobile keeps full width */
+@media (min-width: 769px) {
+    .video-container.video-narrow {
+        max-width: 1300px;
+    }
+}
+
+/* Per-video sound toggle (wrapper + button are added by script.js) */
+.video-sound-wrap {
+    position: relative;
+    width: 100%;
+    min-width: 0; /* let it shrink inside flex/grid containers */
+}
+
+.video-sound-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.2s ease;
+}
+
+.video-sound-btn:hover {
+    transform: scale(1.08);
+}
+
+.video-sound-btn svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+/* Invisible layer over the video: clicking it toggles sound instead of
+   pausing. Stops above the bottom strip so the native controls stay usable. */
+.video-click-catcher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .video-sound-btn {
+        width: 34px;
+        height: 34px;
+        top: 8px;
+        right: 8px;
+    }
+    .video-sound-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Spacer: extra vertical whitespace between images/videos/text; desktop only, invisible on mobile */
+.spacer {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .spacer {
+        display: block;
+        height: 60px;
+    }
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    
+    .video-container.side-by-side {
+        grid-template-columns: 1fr; /* Stacks videos on mobile */
+    }
+}
+
+/* Add this to your existing CSS */
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    width: 90%;           /* Match .text-container / .image-container on other pages */
+    max-width: 1700px;    /* Match the site-wide content column */
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Inside the flex row the text column shouldn't keep its page-level width */
+.about-container .text-container {
+    flex: 1;
+    width: auto;
+    margin: 0;
+    min-width: 0;
+}
+
+/* Render the blank lines in the data-english/data-dutch text as paragraph breaks */
+.text-container p {
+    white-space: pre-line;
+}
+
+.title-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.content-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.about-image {
+    width: 35%;
+    flex-shrink: 0;
+    height: auto;
+    align-self: flex-start;
+    margin-top: 197px;    /* Top edge lines up exactly with the first paragraph (H1 + language toggle height) */
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+#contact {
+    padding: 20px 0;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 30px;
+    color: #323232;
+}
+
+.contact-info a {
+    color: #323232;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #F0BB78;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        /* Horizontal padding comes from the shared mobile rule next to
+           .image-container (10px gutters matching the image padding) */
+    }
+    .video {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+
+    .about-image {
+        width: calc(100% - 20px);  /* Same 10px gutters as the text above it */
+        margin-top: 0;
+        align-self: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        width: 90%;           /* Match .text-container / .image-container on mobile */
+        padding: 0 10px;      /* Same 10px gutters as the text and image containers */
+        margin: 0 auto;       /* Center the grid on the page */
+        box-sizing: border-box;
+        gap: 20px;            /* Same spacing between cards as desktop (~4% of a column) */
+    }
+
+    /* The 96% width leaves a 4% gap on the right of each card
+       (column spacing on desktop) — remove it in the single column
+       so cards sit perfectly centered */
+    .card img,
+    .card::before {
+        width: 100%;
+        height: 100%;
+    }
+
+    header img {
+        width: 75px;
+    }
+
+    /* Nav bar styling now lives in the base nav rule (full-width sticky bar);
+       only the mobile padding differs, set in the media block above */
+
+    nav a {
+        font-size: 20px;
+    }
+
+   @media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        width: 100%;
+        padding: 0 0px;
+        transform: translateX(0); /* Reset fix on mobile as padding handles it */
+        box-sizing: border-box;
+    }
+}
+
+    p {
+        font-size: 15px;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .language-toggle button {
+        font-size: 10px;
+    }
+}
+
+/* Link Container - Matches text-container alignment */
+.video-link-container {
+    text-align: left;
+    
+    /* Alignment Logic - Matches images and headers */
+    width: 90%;           
+    max-width: 1700px;    
+    margin: 0 auto;       /* Centers the container box */
+    
+    margin-bottom: 20px;  /* Space between link and video */
+    margin-top: 10px;     /* Space between text and link */
+    
+    /* Your original animation */
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 0.5s; 
+}
+
+@media (hover: none), (max-width: 768px) {
+    .video-link-container {
+        width: 90%;
+        padding: 0 10px;  /* Same 10px gutters as the .image-container padding */
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+}
+
+/* The Link Styling */
+.video-link {
+    font-size: 20px;       /* Matches your paragraph size */
+    font-weight: bold;     /* Makes it stand out slightly */
+    text-decoration: none; /* Removes standard underline */
+    color: #323232;        /* Default Black */
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.video-link:hover {
+    color: #F0BB78;        /* Turns Yellow on hover */
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .video-link {
+        font-size: 15px;   /* Matches your mobile paragraph size */
+    }
+}
+
+@keyframes flash-icons {
+    0% {
+        color: #323232;
+        transform: scale(1);
+    }
+    10% {
+        color: #F0BB78;       /* First Flash: Gold */
+        transform: scale(1.1); /* Scale Up: Peak size */
+    }
+    25% {
+        color: #323232;       /* Reset Color: Black */
+        transform: scale(1);   /* Scale Down: Back to normal */
+    }
+
+}
+
+
+.flash-active {
+    display: inline-block;
+    animation: flash-icons 1.5s ease-out; 
+}
