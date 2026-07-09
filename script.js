@@ -384,3 +384,54 @@ window.addEventListener('keydown', (e) => {
         }
     }
 });
+
+// --- PROJECT HIGHLIGHT (index page) ---
+// Large image above the cards that crossfades through the projects every
+// ~2 seconds; clicking it opens the project currently shown.
+const highlightEl = document.getElementById('projectHighlight');
+if (highlightEl) {
+    const highlightProjects = [
+        { img: 'images/placeholders/p1.avif', title: 'ZULLEN WE EVEN THEE DRINKEN?', url: '/thee' },
+        { img: 'images/placeholders/p2.avif', title: 'PYRAMID PARK',                 url: '/pyramidpark' },
+        { img: 'images/placeholders/p3.avif', title: 'ISE FENIX',                    url: '/fenix' },
+        { img: 'images/placeholders/p4.avif', title: 'HET NIETJE',                   url: '/nietje' },
+        { img: 'images/placeholders/p5.avif', title: 'ARCADIA',                      url: '/arcadia' },
+        { img: 'images/placeholders/p6.avif', title: 'LANDMARKS WESTERPARK',         url: '/westerpark' },
+        { img: 'images/placeholders/p7.avif', title: 'GREEN STREAMS',                url: '/greenstreams' },
+        { img: 'images/placeholders/p8.avif', title: 'PACHAMAMA',                    url: '/pachamama' }
+    ];
+
+    const imgA = document.getElementById('highlightImgA');
+    const imgB = document.getElementById('highlightImgB');
+    const highlightText = document.getElementById('highlightText');
+
+    let currentProject = Math.floor(Math.random() * highlightProjects.length);
+    let frontImg = imgA;   // The image currently visible
+    let backImg = imgB;    // The hidden buffer that receives the next image
+
+    frontImg.src = highlightProjects[currentProject].img;
+    highlightText.textContent = highlightProjects[currentProject].title;
+
+    highlightEl.addEventListener('click', () => {
+        window.location.href = highlightProjects[currentProject].url;
+    });
+
+    setInterval(() => {
+        // Pick a random project different from the one on screen
+        let next;
+        do {
+            next = Math.floor(Math.random() * highlightProjects.length);
+        } while (next === currentProject);
+
+        // Load the next image into the hidden buffer, then crossfade
+        backImg.src = highlightProjects[next].img;
+        backImg.classList.add('active');
+        frontImg.classList.remove('active');
+
+        currentProject = next;
+        highlightText.textContent = highlightProjects[next].title;
+
+        // Swap roles for the next cycle
+        [frontImg, backImg] = [backImg, frontImg];
+    }, 4000);
+}

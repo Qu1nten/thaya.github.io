@@ -8,8 +8,8 @@ body {
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    background-color: #f6f6f6;
-    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+    background-color: #eeeeee;
+    font-family: Helvetica, sans-serif;
     text-align: center;
     position: relative;
     /* No margin/padding-top: the nav bar must reach the very top and the screen edges */
@@ -24,7 +24,7 @@ nav {
     display: flex;
     justify-content: flex-end; /* Keep the links on the right */
     z-index: 8000;
-    background-color: #f6f6f6; /* The bar — content disappears behind it when scrolling */
+    background-color: #eeeeee; /* The bar — content disappears behind it when scrolling */
     padding: 20px ; /* Right inset replaces the old margin-right: 80px */
     box-sizing: border-box;
 }
@@ -32,14 +32,14 @@ nav {
 nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #323232;
+    color: #1B211A;
     font-size: 40px;
-    font-weight: 400;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #F0BB78;
+    color: #9ca763;
 }
 
 /* Name on the left of the nav bar — same font/size as the links (it's a nav a),
@@ -48,7 +48,7 @@ nav a:hover {
     margin-right: auto;   /* Pushes Work/About/Contact to the right */
     white-space: nowrap;  /* Never break the name onto two lines */
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease, color 0.3s ease; /* Keep the nav links' color fade alongside the fade-in */
     pointer-events: none; /* Not clickable while invisible */
 }
 
@@ -82,8 +82,7 @@ body.scrolled .nav-name {
 
 h1 {
     font-size: 80px;
-    font-weight: 400;
-    color: #323232;
+    color: #6a9a47;
     text-align: left;
     width: 100%;          /* Now fills the 1700px parent container */
     margin-bottom: 10px;
@@ -104,14 +103,80 @@ p {
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
     animation-delay: 0.2s;
-    color: #323232;
+    color: #1B211A;
     
 }
 
 
+/* Project highlight — large rotating image above the cards */
+.highlight-container {
+    width: 90%;
+    max-width: 1700px;
+    margin: 0 auto 40px;
+}
+
+.highlight {
+    position: relative;
+    /* Card images fill 96% of their column, so the grid's visible right edge
+       is inset by 4% of one column = 4%/4 of the full row. Match it. */
+    width: calc(100% - (4% / 4));
+    height: 65vh;
+    cursor: pointer;
+    border-radius: 12px;   /* Match the card corners */
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out both;
+}
+
+/* Two stacked images crossfade; .active is the visible one */
+.highlight-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.8s ease;
+}
+
+.highlight-img.active {
+    opacity: 1;
+}
+
+.highlight-text {
+    position: absolute;
+    bottom: 24px;
+    left: 28px;
+    font-size: 24px;
+    color: #eeeeee;
+    font-weight: bold;
+    text-align: left;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    /* Same 10px gutters as the mobile projects grid so edges line up */
+    .highlight-container {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .highlight {
+        width: 100%;   /* Mobile cards are full-width — no right inset */
+        height: 40vh;
+    }
+
+    .highlight-text {
+        font-size: 18px;
+        bottom: 16px;
+        left: 18px;
+    }
+}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0;
     max-width: 1700px;
     width: 90%;
@@ -193,10 +258,10 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 24px;
-    color: #F6F6F6;
+    color: #eeeeee;
     text-align: center;
     opacity: 1;
-    font-weight: 400;
+    font-weight: bold;
     transition: opacity 0.5s ease;
     pointer-events: none;
     z-index: 2;
@@ -294,7 +359,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #f6f6f6c4;
+    background-color: #eeeeee;
     overflow: hidden; /* Prevent body scroll bars from appearing */
 }
 
@@ -326,11 +391,11 @@ p {
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
-    color: #323232;
+    color: #1B211A;
     font-size: 20px;
     text-align: center;
     padding: 5px 10px;
-    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
     pointer-events: none; 
 }
 
@@ -342,7 +407,7 @@ p {
 }
 
 .arrow:hover {
-    color: #F0BB78; 
+    color: #9ca763; 
     transform: translateY(-50%) scale(1.2); 
 }
 
@@ -350,7 +415,7 @@ p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: #323232;
+    color: #1B211A;
     font-size: 90px;
     cursor: pointer;
     user-select: none;
@@ -368,7 +433,7 @@ p {
 
 
 .language-toggle button.active {
-    color: #323232;
+    color: #1B211A;
 }
 
 
@@ -384,7 +449,7 @@ p {
 .language-toggle button {
     background: none;
     border: none;
-    color: #F0BB78;
+    color: #9ca763;
     font-size: 15px;
     font-weight: bold;
     cursor: pointer;
@@ -393,7 +458,7 @@ p {
 }
 
 .language-toggle button:hover {
-    color: #323232;
+    color: #1B211A;
 }
 
 
@@ -457,7 +522,7 @@ p {
     padding: 0;
     border: none;
     background: transparent;
-    color: #fff;
+    color: #eeeeee;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -568,26 +633,33 @@ p {
 }
 
 #contact {
-    padding: 20px 0;
+    padding: 100px 0;
     text-align: center;
-    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 
 .contact-info {
     max-width: 800px;
     margin: 0 auto;
     font-size: 30px;
-    color: #323232;
+    color: #6a9a47;
 }
 
 .contact-info a {
-    color: #323232;
+    display: inline-block;
+    font-size: 24px;        /* Slightly bigger than the 20px body text */
+    padding: 10px 26px;
+    margin: 0 8px;
+    border: 2px solid #1B211A;
+    border-radius: 999px;   /* Pill shape */
+    color: #1B211A;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .contact-info a:hover {
-    color: #F0BB78;
+    color: #9ca763;
+    border-color: #9ca763;
 }
 
 
@@ -703,14 +775,14 @@ p {
     font-size: 20px;       /* Matches your paragraph size */
     font-weight: bold;     /* Makes it stand out slightly */
     text-decoration: none; /* Removes standard underline */
-    color: #323232;        /* Default Black */
+    color: #1B211A;        /* Default Black */
     transition: color 0.3s ease;
     cursor: pointer;
 }
 
 /* Hover Effect */
 .video-link:hover {
-    color: #F0BB78;        /* Turns Yellow on hover */
+    color: #9ca763;        /* Turns Yellow on hover */
 }
 
 /* Mobile adjustment */
@@ -722,15 +794,18 @@ p {
 
 @keyframes flash-icons {
     0% {
-        color: #323232;
+        color: #1B211A;
+        border-color: #1B211A;
         transform: scale(1);
     }
     10% {
-        color: #F0BB78;       /* First Flash: Gold */
+        color: #9ca763;        /* First Flash: Green */
+        border-color: #9ca763; /* Pill border flashes along with the text */
         transform: scale(1.1); /* Scale Up: Peak size */
     }
     25% {
-        color: #323232;       /* Reset Color: Black */
+        color: #1B211A;       /* Reset Color: Black */
+        border-color: #1B211A;
         transform: scale(1);   /* Scale Down: Back to normal */
     }
 
