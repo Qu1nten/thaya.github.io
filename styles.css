@@ -9,7 +9,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f6f6f6;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
     text-align: center;
     position: relative;
     /* No margin/padding-top: the nav bar must reach the very top and the screen edges */
@@ -34,7 +34,7 @@ nav a {
     text-decoration: none;
     color: #323232;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 400;
     transition: color 0.3s ease;
 }
 
@@ -82,6 +82,7 @@ body.scrolled .nav-name {
 
 h1 {
     font-size: 80px;
+    font-weight: 400;
     color: #323232;
     text-align: left;
     width: 100%;          /* Now fills the 1700px parent container */
@@ -118,6 +119,7 @@ p {
 
 .card {
     position: relative;
+    aspect-ratio: 1 / 1;  /* Square cards regardless of the image's own ratio */
     border: 0px solid #dddddd00;
     cursor: pointer;
     /* CHANGED: Use a normal transition so the value drops gradually */
@@ -150,6 +152,8 @@ p {
     width: 96%;
     height: 96%;
     display: block;
+    object-fit: cover;    /* Crop non-square images to fill the square card */
+    border-radius: 12px;
     transition: transform 0.5s ease;
 }
 
@@ -171,6 +175,7 @@ p {
     left: 0;
     width: 96%;
     height: 96%;
+    border-radius: 12px;  /* Match the card image corners */
     background-color: rgba(229, 229, 230, 0.336);
     transition: background-color 0.5s ease, transform 0.5s ease;
     pointer-events: none;
@@ -191,7 +196,7 @@ p {
     color: #F6F6F6;
     text-align: center;
     opacity: 1;
-    font-weight: bold;
+    font-weight: 400;
     transition: opacity 0.5s ease;
     pointer-events: none;
     z-index: 2;
@@ -325,7 +330,7 @@ p {
     font-size: 20px;
     text-align: center;
     padding: 5px 10px;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
     pointer-events: none; 
 }
 
@@ -565,7 +570,7 @@ p {
 #contact {
     padding: 20px 0;
     text-align: center;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
 .contact-info {
