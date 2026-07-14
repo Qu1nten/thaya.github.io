@@ -872,3 +872,11 @@ p {
   font-style: normal;
   font-display: swap; /* Tells the browser to show a fallback font immediately until the custom one loads */
 }
+
+@font-face {
+  font-family: 'thaya2';
+  src: url('/fonts/thaya2.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Tells the browser to show a fallback font immediately until the custom one loads */
+}
