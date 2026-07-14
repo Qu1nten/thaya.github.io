@@ -391,14 +391,14 @@ window.addEventListener('keydown', (e) => {
 const highlightEl = document.getElementById('projectHighlight');
 if (highlightEl) {
     const highlightProjects = [
-        { img: 'images/placeholders/p1.avif', title: 'ZULLEN WE EVEN THEE DRINKEN?', url: '/thee' },
+        { img: 'images/thee/t1.avif', title: 'ZULLEN WE EVEN THEE DRINKEN?', url: '/thee' },
         { img: 'images/placeholders/p2.avif', title: 'PYRAMID PARK',                 url: '/pyramidpark' },
-        { img: 'images/placeholders/p3.avif', title: 'ISE FENIX',                    url: '/fenix' },
+        { img: 'images/fenix/f1.avif', title: 'ISE FENIX PROJECT',                    url: '/fenix' },
         { img: 'images/placeholders/p4.avif', title: 'HET NIETJE',                   url: '/nietje' },
-        { img: 'images/placeholders/p5.avif', title: 'ARCADIA',                      url: '/arcadia' },
+        { img: 'images/arcadia/a1.avif', title: 'ARCADIA',                      url: '/arcadia' },
         { img: 'images/placeholders/p6.avif', title: 'LANDMARKS WESTERPARK',         url: '/westerpark' },
         { img: 'images/placeholders/p7.avif', title: 'GREEN STREAMS',                url: '/greenstreams' },
-        { img: 'images/placeholders/p8.avif', title: 'PACHAMAMA',                    url: '/pachamama' }
+        { img: 'images/pachamama/p7.avif', title: 'PACHAMAMA',                    url: '/pachamama' }
     ];
 
     const imgA = document.getElementById('highlightImgA');
@@ -433,5 +433,5 @@ if (highlightEl) {
 
         // Swap roles for the next cycle
         [frontImg, backImg] = [backImg, frontImg];
-    }, 4000);
+    }, 3000);
 }

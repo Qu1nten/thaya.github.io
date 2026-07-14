@@ -27,15 +27,23 @@ nav {
     background-color: #eeeeee; /* The bar — content disappears behind it when scrolling */
     padding: 20px ; /* Right inset replaces the old margin-right: 80px */
     box-sizing: border-box;
+    white-space: nowrap 
 }
 
 nav a {
-    margin: 0 10px;
+    margin: 0 25px;
     text-decoration: none;
     color: #1B211A;
     font-size: 40px;
     font-weight: bold;
     transition: color 0.3s ease;
+    font-family: Helvetica, sans-serif;
+}
+
+    @media (max-width: 768px) {
+    nav a {
+        margin: 0 12px;
+    }
 }
 
 nav a:hover {
@@ -50,6 +58,7 @@ nav a:hover {
     opacity: 0;
     transition: opacity 0.4s ease, color 0.3s ease; /* Keep the nav links' color fade alongside the fade-in */
     pointer-events: none; /* Not clickable while invisible */
+    font-family: madink, sans-serif;
 }
 
 body.scrolled .nav-name {
@@ -64,7 +73,7 @@ body.scrolled .nav-name {
 
 /* Below 768px the links shrink to 20px, so the name fits again */
 @media (max-width: 768px) {
-    .nav-name { display: block; }
+    .nav-name { display: none; }
 }
 
 /* On very narrow phones even the 20px version collides with the links */
@@ -81,11 +90,12 @@ body.scrolled .nav-name {
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 90px;
     color: #6a9a47;
     text-align: left;
     width: 100%;          /* Now fills the 1700px parent container */
     margin-bottom: 10px;
+    font-family: madink, sans-serif;
     
     /* Optical Fix: Nudge the first letter slightly left to 
        offset the font's natural side-padding */
@@ -153,6 +163,7 @@ p {
     text-align: left;
     pointer-events: none;
     z-index: 2;
+    font-family: madink, sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -191,6 +202,7 @@ p {
     transition: z-index 0.5s; 
     animation: fadeIn 1s ease-in-out both;
     z-index: 1; 
+    font-family: madink, sans-serif;
 
     
 }
@@ -647,19 +659,30 @@ p {
 
 .contact-info a {
     display: inline-block;
-    font-size: 24px;        /* Slightly bigger than the 20px body text */
+    font-size: 28px;        /* Slightly bigger than the 20px body text */
     padding: 10px 26px;
     margin: 0 8px;
-    border: 2px solid #1B211A;
-    border-radius: 999px;   /* Pill shape */
     color: #1B211A;
-    text-decoration: none;
+    text-decoration: none;  
     transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .contact-info a {
+    font-size: 20px;
+    margin: 0 20px;
+     padding: 0px 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact {
+    padding: 25px 0;
+  }
 }
 
 .contact-info a:hover {
     color: #9ca763;
-    border-color: #9ca763;
 }
 
 
@@ -722,7 +745,7 @@ p {
 
    @media (max-width: 768px) {
     h1 {
-        font-size: 40px;
+        font-size: 30px;
         width: 100%;
         padding: 0 0px;
         transform: translateX(0); /* Reset fix on mobile as padding handles it */
@@ -819,8 +842,32 @@ p {
 
 
 @font-face {
-  font-family: 'quinten';
-  src: url('/fonts/quinten.woff2') format('woff2');
+  font-family: 'bumiku';
+  src: url('/fonts/bumiku.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Tells the browser to show a fallback font immediately until the custom one loads */
+}
+
+@font-face {
+  font-family: 'madink';
+  src: url('/fonts/madink.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Tells the browser to show a fallback font immediately until the custom one loads */
+}
+
+@font-face {
+  font-family: 'chi';
+  src: url('/fonts/chi.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Tells the browser to show a fallback font immediately until the custom one loads */
+}
+
+@font-face {
+  font-family: 'thaya';
+  src: url('/fonts/thaya.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap; /* Tells the browser to show a fallback font immediately until the custom one loads */
