@@ -816,3 +816,12 @@ p {
     display: inline-block;
     animation: flash-icons 1.5s ease-out; 
 }
+
+
+@font-face {
+  font-family: 'quinten';
+  src: url('/fonts/quinten.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; /* Tells the browser to show a fallback font immediately until the custom one loads */
+}
